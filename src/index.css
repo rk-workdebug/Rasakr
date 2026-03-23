@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cinzel", serif;
+  --font-body: "Cormorant Garamond", serif;
+  --font-sans: "Cormorant Garamond", serif; /* Override default sans */
+
+  --color-bg: #f5f6f1;
+  --color-text-main: #7f340f;
+  --color-text-secondary: #9ca3af;
+  --color-black: #0a0703;
+  --color-gold: #b8922a;
+}
+
+@layer base {
+  :root {
+    --bg: #f5f6f1;
+    --text-main: #7f340f;
+    --text-secondary: #9ca3af;
+    --black: #0a0703;
+    --gold: #b8922a;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .radius-base {
+    border-radius: 12px;
+  }
+  
+  .radius-lg {
+    border-radius: 16px;
+  }
+
+  .radius-full {
+    border-radius: 9999px;
+  }
+
+  .hover-scale {
+    transition: transform 300ms ease 100ms;
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+}
